@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href=@String.Format("/css/style.css")>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="screen">
+    <header>Login</header>
+    <form action="#">
+      <div class="field user">
+        <div class="input-area">
+          <input type="text" placeholder="Username">
+          <i class="icon fas fa-user"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">User is empty or not valid</div>
+      </div>
+
+      <div class="field password">
+        <div class="input-area">
+          <input type="password" placeholder="Password">
+          <i class="icon fas fa-lock"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+
+        <div class="error error-txt">Password is empty or not valid</div>
+      </div>
+
+      <div class="pass-txt"><a href="https://www.youtube.com/watch?v=TCxcweGKB3Q">Forgot password?</a></div>
+      <input type="submit" value="Login">
+    </form>
+    <div class="sign-txt">Not registered yet? <a href="http://localhost:12327/sign">Click here to sign up</a></div>
+  </div>
+
+  <script src="static/script.js"></script>
+  <script type="module"></script>
+  
+</body>
+</html>
