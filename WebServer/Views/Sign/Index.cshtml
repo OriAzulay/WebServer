@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="~/css/style2.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <title>SignUp</title>
+  <script src="~/js/script2.js"></script>
+  <script type="module"></script>
+</head>
+<body>
+  
+  <div class="signupFrm">
+    <form action="" class="form">
+      <h1 class="title">Sign up</h1>
+
+      <div class="inputContainer">
+        <input type="text" class="input" placeholder="a" id="user" name="user">
+        <label for="" class="label">Username</label>
+        <i class="icon fas fa-user"></i>
+
+      </div>
+
+      <div class="inputContainer">
+        <input type="password" class="input" placeholder="a" id="password" name="password">
+        <label for="" class="label">Password</label>
+
+        <i class="icon fas fa-lock"></i>
+      </div>
+
+      <div class="inputContainer">
+        <input type="password" class="input" placeholder="a" id="confirm" name="confirm">
+        <label for="" class="label">Confirm Password</label>
+
+        <i class="icon fas fa-check"></i>
+      </div>
+    
+      <div class="inputContainer">
+        <input type="text" class="input" placeholder="a" id="nickname" name="nickname">
+        <label for="" class="label">DisplayName</label>
+        <i class="fa-solid fa-face-grin-tongue-wink"></i>
+      </div>
+      <input type="file" id="image_input" accept="image/png, image/jpg, image/jpeg">
+      
+      <div class="save">
+        <input type="submit" onclick="validication()" asp-area="" asp-controller="UserChat" asp-action="Index" name="" value="Register">
+      </div>
+    
+      <a class="form-submit" asp-area="" asp-controller="Login" asp-action="Index">Go Back to Log In</a>
+    </form>
+  </div>
+  </body>
+   
+</html>

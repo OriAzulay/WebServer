@@ -1,0 +1,120 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(C:\Users\pc2\empty\static\images\bg.png);
+    background: linear-gradient( #d6c4fb 0%, #d6c4fb 130px, #eae6f3 130px, #eae6f3 100%);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.signupFrm {
+    text-align: center;
+    display: flex;
+    margin: 12% auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: #d6c4fb ;
+    width: 550px;
+    margin: 12% auto;
+    padding: 40px 30px 50px 30px;
+    color: purple;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 20px 2px rgba(0,0,0,0.5)
+}
+
+.title {
+    color: purple;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.inputContainer {
+    text-align: left;
+    height: 40px;
+    width: 90%;
+    margin-bottom: 60px;
+}
+
+    .inputContainer .icon {
+        left: 16px;
+        padding: 5px;
+        color: purple;
+        transition: color 0.2s ease;
+    }
+
+.input {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background: transparent;
+    color: purple;
+    border-radius: 4px;
+    border: 1px solid purple;
+    border-bottom-width: 2px;
+    transition: all 0.2s ease;
+}
+
+::placeholder {
+    color: transparent;
+}
+
+.label {
+    margin: auto;
+    position: relative;
+    left: 5px;
+    padding: 20 40px;
+    color: purple;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+.submitBtn:hover {
+    background-color: #9867C5;
+    transform: translateY(-2px);
+}
+
+.input:focus + .label {
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: orange
+}
+
+.save {
+    text-align: center;
+    height: 35px;
+    width: 100%;
+    transition: 0.5s;
+    margin: 40px auto 20px;
+}
+
+.form-submit {
+    justify-content: center;
+    align-items: center;
+    background-color: purple;
+    padding: 9px 45px;
+    font-weight: 600;
+    color: whitesmoke;
+    border: none;
+    font-size: 14px;
+    border-radius: 8px;
+}
