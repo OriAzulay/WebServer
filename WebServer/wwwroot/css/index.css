@@ -1,56 +1,56 @@
 ﻿* {
     margin: 0;
     padding: 0;
-    box- sizing: border - box;
+    box-sizing: border-box;
 }
 
 body {
     display: flex;
-    justify - content: center;
-    align - items: center;
-    min - height: 100vh;
-    background: linear - gradient( #d6c4fb 0 %, #d6c4fb 130px, #eae6f3 130px, #eae6f3 100 %);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient( #d6c4fb 0%, #d6c4fb 130px, #eae6f3 130px, #eae6f3 100%);
 }
 
-.container - fluid {
+.container-fluid {
     position: relative;
     width: 1290px;
-    max - width: 100 %;
+    max-width: 100%;
     height: calc(100vh - 40px);
     background: rgb(251, 251, 251);
-    box - shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.06);
     display: flex;
 }
 
-    .container - fluid.left {
+    .container-fluid .left {
         position: relative;
-        flex: 30 %;
+        flex: 30%;
         background: #fff;
-        border - right: 1px solid rgba(0, 0, 0, 0.2);
-        margin - inline - end: 100px;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+        margin-inline-end: 100px;
     }
 
-    .container - fluid.right {
+    .container-fluid .right {
         position: absolute;
-        margin - inline - start: 370px;
+        margin-inline-start: 370px;
         width: 932px;
-        flex: 70 %;
+        flex: 70%;
         background: #fff;
-        padding: 0 %;
+        padding: 0%;
     }
 
-        .container - fluid.right:: before {
+        .container-fluid .right::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100 %;
-            height: 100 %;
+            width: 100%;
+            height: 100%;
             background: rgb(250, 247, 251);
             opacity: 0.06;
         }
 
-.list - group li {
+.list-group li {
     width: 370px;
 }
 
@@ -59,7 +59,7 @@ body {
     width: 40px;
     height: 40px;
     overflow: hidden;
-    border - radius: 100 %;
+    border-radius: 100%;
     cursor: pointer;
 }
 
@@ -67,7 +67,7 @@ body {
     position: relative;
     width: 40px;
     height: 40px;
-    border - radius: 50 %;
+    border-radius: 50%;
     cursor: pointer;
 }
 
@@ -75,52 +75,52 @@ body {
     position: relative;
     top: 0;
     left: 0;
-    width: 100 %;
-    height: 100 %;
-    object - fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.list - group span {
-    margin - inline - start: 20px;
-    column - width: 850px;
+.list-group span {
+    margin-inline-start: 20px;
+    column-width: 850px;
 }
 
-.list - group cite {
-    font - size: x - small;
-    padding - right: 0 %;
+.list-group cite {
+    font-size: x-small;
+    padding-right: 0%;
 }
 
-#lst li: hover {
-    background - color: rgb(215, 248, 210);
+#lst li:hover {
+    background-color: rgb(215, 248, 210);
     cursor: pointer;
     animation: mymove 4s infinite;
 }
 
 @keyframes mymove {
-    50 % {
-        text- shadow: 2px 5px 7px rgb(31, 31, 31);
+    50% {
+        text-shadow: 2px 5px 7px rgb(31, 31, 31);
     }
 }
 
 .left {
-    min - height: 300px;
-    padding - left: 0 %;
-    padding - right: 0 %;
-    margin - right: 0 % !important;
+    min-height: 300px;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-right: 0% !important;
 }
 
 .row {
     width: 370px;
 }
 
-.container - fluid {
-    padding - left: 0 %;
+.container-fluid {
+    padding-left: 0%;
 }
 
 #top {
     width: 931px;
-    margin - bottom: 20px;
-    background - color: #e4d7fd;
+    margin-bottom: 20px;
+    background-color: #e4d7fd;
 }
 
 /* #inner {
@@ -130,49 +130,49 @@ body {
 } */
 
 #bottom {
-    margin - bottom: 10px !important;
+    margin-bottom: 10px !important;
 }
 
 #addContactTop {
-    background - color: #c5ecf4;
+    background-color: #c5ecf4;
 }
 
 #addContactMiddle {
-    background - color: #eff8fa;
+    background-color: #eff8fa;
 }
 
-.mx - 3 {
-    margin - right: 0 % !important;
-    margin - left: 0 % !important;
+.mx-3 {
+    margin-right: 0% !important;
+    margin-left: 0% !important;
 }
 
-.mb - 3 {
-    margin - bottom: 0 % !important;
+.mb-3 {
+    margin-bottom: 0% !important;
 }
 
 #addContactBottom {
-    background - color: #dbf3f8;
+    background-color: #dbf3f8;
 }
 
-.form - control {
-    line - height: 1.7;
+.form-control {
+    line-height: 1.7;
 }
 
-.btn - toolbar {
-    padding - bottom: 100px !important;
+.btn-toolbar {
+    padding-bottom: 100px !important;
 }
 
 .chatbox {
     position: relative;
-    width: 100 %;
+    width: 100%;
     /* height: 300px; */
-    min - height: 400px;
-    max - height: 555px;
-    padding - left: 20px;
-    padding - right: 20px;
-    margin - top: 50px;
-    margin - bottom: 24px;
-    overflow - y: auto;
+    min-height: 400px;
+    max-height: 555px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+    margin-bottom: 24px;
+    overflow-y: auto;
 }
 
 .message {
@@ -185,66 +185,66 @@ body {
     .message p {
         position: relative;
         right: 0;
-        text - align: right;
-        max - width: 65 %;
+        text-align: right;
+        max-width: 65%;
         width: fit-content;
         padding: 12px;
         background: #d6c4fb;
-        border - radius: 10px;
-        font - size: 0.9em;
+        border-radius: 10px;
+        font-size: 0.9em;
     }
 
-        .message p:: before {
+        .message p::before {
             content: "";
             position: absolute;
             top: 0;
             right: -12px;
             width: 20px;
             height: 20px;
-            background: linear-gradient(135deg, #d6c4fb 0 %, #d6c4fb 50 %, transparent 50 %, transparent);
+            background: linear-gradient(135deg, #d6c4fb 0%, #d6c4fb 50%, transparent 50%, transparent);
         }
 
         .message p span {
-            margin - top: 5px;
-            font - size: 0.85em;
+            margin-top: 5px;
+            font-size: 0.85em;
             opacity: 0.5;
         }
 
 .myMsg {
-    justify - content: flex - end;
-    margin - bottom: 0 %;
+    justify-content: flex-end;
+    margin-bottom: 0%;
 }
 
 .recMsg {
-    justify - content: flex - start;
-    margin - bottom: 0 %;
+    justify-content: flex-start;
+    margin-bottom: 0%;
 }
 
     .recMsg p {
         background: rgb(215, 248, 210);
-        text - align: left;
+        text-align: left;
     }
 
-.message.recMsg p:: before {
+.message.recMsg p::before {
     content: "";
     position: absolute;
     top: 0;
     left: -12px;
     width: 20px;
     height: 20px;
-    background: linear - gradient(225deg, rgb(215, 248, 210) 0 %, rgb(215, 248, 210) 50 %, transparent 50 %, transparent);
+    background: linear-gradient(225deg, rgb(215, 248, 210) 0%, rgb(215, 248, 210) 50%, transparent 50%, transparent);
 }
 
 .sentImage {
-    max - height: 140px;
+    max-height: 140px;
 }
 
 .sentVideo {
-    max - height: 140px;
+    max-height: 140px;
 }
 
-.list - group div {
-    font - size: small;
+.list-group div {
+    font-size: small;
     color: rgb(140, 140, 140);
 }
 
@@ -256,16 +256,16 @@ body {
     color: rgb(80, 80, 80);
 }
 
-.p - 4 {
+.p-4 {
     padding-right: 0 !important;
     height: 690px;
-    max - height: 150 % !important;
+    max-height: 150% !important;
     overflow: auto !important;
 }
 
 
 #left {
-    background - color: rgb(234, 250, 231);
+    background-color: rgb(234, 250, 231);
 }
 
 #addContactTop h4 {
