@@ -14,6 +14,7 @@ var users = [{
     pas: 'lala789',
 }];
 
+console.log("Checking");
 const form = document.querySelector("form");
 username = form.querySelector(".user"),
     eInput = username.querySelector("input"),
@@ -42,10 +43,10 @@ form.onsubmit = (e) => {
     if (eInput.value != "") {
         if ((eInput.value === user0.usr && pInput.value === user0.pas) || (eInput.value === user1.usr && pInput.value === user1.pas) ||
             (eInput.value === user2.usr && pInput.value === user2.pas)) {
-            window.location.href = "http://localhost:12327/index";
+            window.location.href = "http://localhost:40179/UserChat";
         }
         else {
-            alert("User does not exist.")
+            alert("User does not exist !.")
         }
     }
 

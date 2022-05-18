@@ -1,15 +1,4 @@
-﻿function Toggle() {
-        //Toggle password:
-    const togglePassword = document.querySelector("#togglePassword");
-    const password = document.querySelector("#pass");
-    togglePassword.addEventListener("click", function () {
-        // toggle the type attribute
-    const type = password.getAttribute("type") === "password" ? "text" : "password";
-    password.setAttribute("type", type);
-        // toggle the eye / eye slash icon
-    this.classList.toggle("bi-eye");
-},
-
+﻿
 function validication() {
     
 
@@ -55,9 +44,7 @@ function validication() {
             })
             localStorage.setItem("users", JSON.stringify(user_records));
             alert('Registered successfully')
-            window.location.href = "http://localhost:12327/login";
+            window.location.href = "http://localhost:40179/UserChat";
 
         }
-
     }
-

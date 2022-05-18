@@ -10,7 +10,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login</title>
-	<link rel="stylesheet" href="~/css/style.css" />
+	<link rel="stylesheet" href=@String.Format("css/style.css") />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<title>Login</title>
 </head>
@@ -40,7 +40,7 @@
 			</div>
 
 			<div class="pass-txt"><a href="https://www.youtube.com/watch?v=TCxcweGKB3Q">Forgot password?</a></div>
-			<input type="submit" value="Login">
+			<input type="submit" value="Login" >
 		</form>
 		<div class="sign-txt">Not registered yet? <a asp-area="" asp-controller="Sign" asp-action="Index">Click here to sign up</a></div>
 	</div>
