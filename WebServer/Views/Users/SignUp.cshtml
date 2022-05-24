@@ -30,11 +30,14 @@
                 <input type="submit" value="Register" class="btn btn-primary" />
             </div>
         </form>
+        @if (ViewBag.Error != null){
+            <div class="text-danger">@ViewBag.Error</div>
+        }
     </div>
 </div>
 
 <div>
-    <a>You have an account? click</a><a asp-action="Create"> here </a><a>to Login</a>
+    <a>You have an account? click</a><a asp-action="Login"> here </a><a>to Login</a>
 </div>
 
 @section Scripts {

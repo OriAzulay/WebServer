@@ -9,8 +9,8 @@ namespace WebServer.Models
 {
     public class User
     {   
-        public int Id { get; set; }
-        [key]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string UserName { get; set; }
 
         [Required]
