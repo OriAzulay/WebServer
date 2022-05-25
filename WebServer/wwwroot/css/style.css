@@ -12,7 +12,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(C:\Users\pc2\empty\static\images\bg.png);
     background: linear-gradient( #d6c4fb 2%, #d6c4fb 130px, #eae6f3 50px, #eae6f3 100%);
     background-size: cover;
     background-position: center;
@@ -22,7 +21,7 @@ body {
 .screen {
     background-color: #eae6f3;
     width: 680px;
-    margin: 12% auto;
+    margin: auto;
     padding: 40px 30px 50px 30px;
     color: purple;
     border-radius: 5px;
@@ -38,6 +37,37 @@ body {
     .screen form {
         margin: 40px 0;
     }
+
+.loginFrm {
+    text-align: center;
+    display: flex;
+    margin: 3% auto;
+    justify-content: center;
+    align-items: center;
+}
+.col-md-4 {
+    background-color: #eae6f3;
+    width: 550px;
+    margin: auto;
+    padding: 40px 30px 50px 30px;
+    color: purple;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 20px 2px rgba(0,0,0,0.5)
+}
+.title {
+    color: purple;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.form-group {
+    text-align: left;
+    height: 40px;
+    width: 90%;
+    margin-bottom: 60px;
+}
+
 
 form .field {
     width: 100%;

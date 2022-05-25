@@ -3,14 +3,15 @@
 @{
     ViewData["Title"] = "Login";
 }
-<link rel="stylesheet" href=@String.Format("/css/style2.css") />
-<script src=@String.Format("/js/script2.js")></script>
+<link rel="stylesheet" href=@String.Format("/css/style.css") />
+<script src=@String.Format("/js/script.js")></script>
 
-<h1>Login</h1>
 
-<hr />
 <div class="row">
     <div class="col-md-4">
+        <div class="loginFrm">
+			<h1 class="title">Login</h1>
+            </div>
         <form asp-action="Login">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -26,6 +27,10 @@
             <div class="form-group">
                 <input type="submit" value="Login"  class="btn btn-primary" />
             </div>
+            <div class="form-group">
+                
+             <a>You don't have an account? click</a><a asp-action="SignUp"> here </a><a>to sign in</a>
+            </div>
         </form>
         @if (ViewBag.Error != null){
             <div class="text-danger">@ViewBag.Error</div>
@@ -33,9 +38,6 @@
     </div>
 </div>
 
-<div>
-    <a>You don't have an account? click</a><a asp-action="SignUp"> here </a><a>to sign in</a>
-</div>
 
 
 @section Scripts {

@@ -47,7 +47,7 @@ namespace WebServer.Controllers
                 }
                 else
                 {
-                    ViewData["Error"] = "User name or password is not correct!";
+                    ViewData["Error"] = "Username or password is not correct!";
                 }
             }
             return View(user);
