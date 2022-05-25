@@ -18,16 +18,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <input asp-for="Password" id="password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password" value class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <label type="Password" value class="control-label">Confirm password</label>
+                <input type="Password" id="confirmPass" class="form-control" />
+                <span value="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Register" class="btn btn-primary" />
+                <input type="submit" value="Register" onclick="passValid()" class="btn btn-primary" />
             </div>
         </form>
         @if (ViewBag.Error != null){
@@ -39,6 +39,17 @@
 <div>
     <a>You have an account? click</a><a asp-action="Login"> here </a><a>to Login</a>
 </div>
+<script>
+    function passValid(){
+        var pass1 = document.getElementById("confirmPass").value;
+        var pass2 = document.getElementById("password").value;
+        if(pass1 != pass2){
+            window.alert("Passwords are not the same");
+            //insert here refresh?// 
+        }
+
+    }
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

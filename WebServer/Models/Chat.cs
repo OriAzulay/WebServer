@@ -1,8 +1,11 @@
 ﻿namespace WebServer.Models
 {
-    public class UserChat
+    public class Chat
     {
         public int Id { get; set; }
+
+        public List<User> UserList { get; set; }
+
         public string Name { get; set; }
     }
 }

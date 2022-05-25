@@ -22,7 +22,7 @@
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-primary" />
+                <input type="submit" value="Login"  class="btn btn-primary" />
             </div>
         </form>
         @if (ViewBag.Error != null){
@@ -34,6 +34,7 @@
 <div>
     <a>You don't have an account? click</a><a asp-action="SignUp"> here </a><a>to sign in</a>
 </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

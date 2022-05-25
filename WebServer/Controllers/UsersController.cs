@@ -33,8 +33,6 @@ namespace WebServer.Controllers
         }
 
         // POST: Users/Login
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login([Bind("UserName,Password")] User user)
@@ -45,7 +43,7 @@ namespace WebServer.Controllers
 
                 if (r.Any())
                 {
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(Index),"Chat");
                 }
                 else
                 {
@@ -54,7 +52,7 @@ namespace WebServer.Controllers
             }
             return View(user);
         }
-        //--------------------------------------------------------
+        
 
         // GET: Users/SignUp
         public IActionResult SignUp()
@@ -63,8 +61,6 @@ namespace WebServer.Controllers
         }
 
         // POST: Users/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SignUp([Bind("UserName,Password")] User user)
@@ -84,14 +80,12 @@ namespace WebServer.Controllers
                     {
                         _context.Add(user);
                         await _context.SaveChangesAsync();
-                        return RedirectToAction(nameof(Index));
+                        return RedirectToAction(nameof(Index), "Chat");
                     }
                 }
             return View(user);
         }
 
-        //------------------------------------------------------------
-        
-      
+
     }
 }

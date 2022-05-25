@@ -43,7 +43,7 @@ form.onsubmit = (e) => {
     if (eInput.value != "") {
         if ((eInput.value === user0.usr && pInput.value === user0.pas) || (eInput.value === user1.usr && pInput.value === user1.pas) ||
             (eInput.value === user2.usr && pInput.value === user2.pas)) {
-            window.location.href = "http://localhost:40179/UserChat";
+            window.location.href = "http://localhost:40179/Chat";
         }
         else {
             alert("User does not exist !.")
