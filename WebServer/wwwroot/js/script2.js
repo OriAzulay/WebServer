@@ -17,7 +17,7 @@ function validication() {
         if (pass.value.length <= 8 && pass.value.length >= 2) { } else {
             alert("Password has to be between 2-8 characters.")
             return false;
-        }
+        }.l
         let pattern = /[A-Za-z]+[0-9]\w{1,9}$/;
         if (!pass.value.match(pattern)) {
             alert("Password has to include characters and numbers")

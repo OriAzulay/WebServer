@@ -4,6 +4,8 @@
     ViewData["Title"] = "SignUp";
 }
 <link rel="stylesheet" href=@String.Format("css/style.css") />
+<script src=@String.Format("~/js/script2.js")></script>
+
 <h1>Sign Up</h1>
 
 <hr />
@@ -27,7 +29,7 @@
                 <span value="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Register" onclick="passValid()" class="btn btn-primary" />
+                <input type="submit" value="Register" onclick="validication()" class="btn btn-primary" />
             </div>
         </form>
         @if (ViewBag.Error != null){
@@ -40,6 +42,7 @@
     <a>You have an account? click</a><a asp-action="Login"> here </a><a>to Login</a>
 </div>
 <script>
+
     function passValid(){
         var pass1 = document.getElementById("confirmPass").value;
         var pass2 = document.getElementById("password").value;

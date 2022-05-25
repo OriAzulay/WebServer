@@ -68,16 +68,21 @@ namespace WebServer.Controllers
             if(ModelState.IsValid)
                 if (ModelState.IsValid)
                 {
-                    var check = from u in _context.User
+                    var checkUser = from u in _context.User
                                 where u.UserName == user.UserName
                                 select u;
-                    if (check.Count() > 0)
+                    
+                    if (checkUser.Count() > 0)
                     {
                         ViewData["Error"] = "This account is already exist!";
                     }
 
                     else
                     {
+                        if(user.Password.Length >=8 && user.Password.Length <= 2)
+                        {
+                            ViewData["Error"] = "Password has to be between 2-8 characters.";
+                        } 
                         _context.Add(user);
                         await _context.SaveChangesAsync();
                         return RedirectToAction(nameof(Index), "Chat");
