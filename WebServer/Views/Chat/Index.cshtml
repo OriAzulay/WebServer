@@ -91,6 +91,9 @@
             </div>
 
             <!--Modal upload image-->
+            
+             <textarea></textarea>
+
             <div class="modal fade" id="modalUploadImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -364,32 +367,9 @@
 </body>
 
 </html>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserName)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.UserName">Edit</a> |
-                <a>Check</a>
-                <a asp-action="Details" asp-route-id="@item.UserName</a> |
-                <a asp-action="Delete" asp-route-id="@item.UserName">Delete</a>
-            </td>
-        </tr>
+@section Scripts {
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/index.js"></script>
 }
-    </tbody>
-</table>
+
 

@@ -1,4 +1,22 @@
-﻿var numberOfUsers = 5;
+﻿$(function () {
+
+    var connection = new signalR.HubConnectionBuilder().withUrl("/ChatHub").build();
+
+    connection.start();
+
+    $('textarea').keyup(() => {
+        const v = $('textarea').val();
+        console.log('sending: ' + v);
+        connection.invoke("Changed", v);
+    });
+
+    connection.on("ChangeReceived", function (value) {
+        console.log('received: ' + value);
+        $('textarea').val(value);
+    });
+
+});
+var numberOfUsers = 5;
 var newUsers = [];
 var currentUser;
 
@@ -55,17 +73,6 @@ const updateLastMessageTime = function (user, cite) {
     cite.innerHTML = user.lastMessageTime;
 }
 
-const uploadImage = function () {
-    $('#modalUploadImage').modal("show");
-}
-
-const uploadVideo = function () {
-    $('#modalUploadVideo').modal("show");
-}
-
-const uploadRecording = function () {
-    $('#modalUploadRecording').modal("show");
-}
 
 const buttons = function () {
     let div = document.getElementById('chat');

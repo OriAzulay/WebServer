@@ -1,3 +1,4 @@
+using WebServer.SignalR.hubs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebServer.Data;
@@ -5,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<WebServerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("WebServerContext") ?? throw new InvalidOperationException("Connection string 'WebServerContext' not found.")));
 
+
+builder.Services.AddSignalR();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -27,6 +30,11 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Users}/{action=SignUp}/{id?}");
+    pattern: "{controller=Chat}/{action=Index}/{id?}");
 
+app.UseEndpoints(endpoints =>
+{
+
+    endpoints.MapHub<ChatHub>("/ChatHub");
+});
 app.Run();

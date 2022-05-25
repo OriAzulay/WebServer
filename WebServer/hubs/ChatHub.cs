@@ -5,7 +5,7 @@ namespace WebServer.SignalR.hubs
     {
         public async Task Changed(string value)
         {
-            await Clients.All.SendAsync("ChangeREcieved", value);
+            await Clients.All.SendAsync("ChangeReceived", value);
         }
     }
 }
