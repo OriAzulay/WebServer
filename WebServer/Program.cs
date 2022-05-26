@@ -30,7 +30,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Users}/{action=Login}/{id?}");
+    pattern: "{controller=Chat}/{action=Index}/{id?}");
 
 app.UseEndpoints(endpoints =>
 {

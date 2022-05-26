@@ -1,21 +1,4 @@
-﻿$(function () {
-
-    var connection = new signalR.HubConnectionBuilder().withUrl("/ChatHub").build();
-
-    connection.start();
-
-    $('textarea').keyup(() => {
-        const v = $('textarea').val();
-        console.log('sending: ' + v);
-        connection.invoke("Changed", v);
-    });
-
-    connection.on("ChangeReceived", function (value) {
-        console.log('received: ' + value);
-        $('textarea').val(value);
-    });
-
-});
+﻿//----
 var numberOfUsers = 5;
 var newUsers = [];
 var currentUser;
@@ -160,11 +143,27 @@ const sendMessage = function (message, chatbox, bool = true, audio = null) {
         } else {
             p.innerHTML = message;
         }
-
-
+        //inset the message to chatbox
         m.appendChild(p);
         chatbox.appendChild(m);
+        $(function () {
 
+            var connection = new signalR.HubConnectionBuilder().withUrl("/ChatHub").build();
+
+            connection.start();
+
+            $('p').keyup(() => {
+                const v = $('p').innerHTML.val();
+                console.log('sending: ' + v);
+                connection.invoke("Changed", v);
+            });
+
+            connection.on("ChangeReceived", function (value) {
+                console.log('received: ' + value);
+                $('textarea').val(value);
+            });
+
+        });
         return 1;
     }
 
@@ -251,7 +250,7 @@ const displayChat = function (user) {
     let i1 = document.createElement('i');
     i1.className = "bi bi-file-plus";
 
-    let input = document.createElement('input');
+    let input = document.createElement('textarea');
     input.type = "text";
     input.className = "form-control";
     input.ariaRoleDescription = "b-input";
@@ -277,8 +276,27 @@ const displayChat = function (user) {
     lt.appendChild(sp);
     div.appendChild(lt);
     inner.appendChild(db);
+    /*$(function () {
+
+        var connection = new signalR.HubConnectionBuilder().withUrl("/ChatHub").build();
+
+        connection.start();
+
+        $('textarea').keyup(() => {
+            const v = $('textarea').val();
+            console.log('sending: ' + v);
+            connection.invoke("Changed", v);
+        });
+
+        connection.on("ChangeReceived", function (value) {
+            console.log('received: ' + value);
+            $('textarea').val(value);
+        });
+
+    });*/
 }
 
+//add messages
 const addRecipient = function (user) {
     if (!user) {
         return;
