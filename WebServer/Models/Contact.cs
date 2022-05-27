@@ -9,13 +9,10 @@ namespace WebServer.Models
     {
         public string Id { set; get; }
         public string Name { set; get; }
-        public string NickName { set; get; }
         public string Password { set; get; }
         public string Server { set; get; }
         public string Last { set; get; }
         public string LastDate { set; get; }
-        public List<Message> Messages { set; get; }
-
         
     }
 }

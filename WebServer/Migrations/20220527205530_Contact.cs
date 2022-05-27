@@ -14,7 +14,6 @@ namespace WebServer.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NickName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Server = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Last = table.Column<string>(type: "nvarchar(max)", nullable: true),
