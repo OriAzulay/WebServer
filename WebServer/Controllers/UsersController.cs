@@ -24,6 +24,39 @@ namespace WebServer.Controllers
         {
               return View(await _context.User.ToListAsync());
         }
+        public async Task<IActionResult> Search()
+        {
+            return View(await _context.User.ToListAsync());
+        }
+        [HttpPost]
+        public async Task<IActionResult> Search(string query)
+        {
+            var q = from user in _context.User
+                    where user.UserName.Contains(query) || 
+                          user.Password.Contains(query)
+                    select user;
+            return View(await q.ToListAsync());
+        }
+        public async Task<IActionResult> Search2(string query)
+        {
+            var q = _context.User.Where(user => user.UserName.Contains(query) || user.Password.Contains(query));
+            return View(await q.ToListAsync());
+        }
+       
+       /* public async Task<IActionResult> contacts()
+        {
+            var q = _context.User;
+              //  Where(user => user.UserName.All || user.Password.All);
+
+            return Json(await q.ToListAsync());
+        }
+        public async Task<IActionResult> contacts1(string query)
+        {
+            var q = _context.User.Where(user => user.UserName.Contains(query) || user.Password.Contains(query));
+
+            return Json(await q.ToListAsync());
+        }*/
+
 
 
         // GET: Users/Login

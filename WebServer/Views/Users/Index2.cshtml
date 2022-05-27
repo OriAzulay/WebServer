@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebServer.Models.Contact>
+
+@{
+    ViewData["Title"] = "Index2";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NickName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Server)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Last)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.LastDate)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayNameFor(model => model.Id)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Name)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.NickName)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Password)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Server)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Last)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.LastDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.Name">Details</a> 
+                <a asp-action="Details" asp-route-id="@item.NickName">Details</a> 
+                <a asp-action="Details" asp-route-id="@item.Password">Details</a> 
+                <a asp-action="Details" asp-route-id="@item.Server">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.NickName">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.Password">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
