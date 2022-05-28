@@ -20,6 +20,8 @@ After you signup with a new user it will be save at the db table Users) - again 
 
 ChatBox Page : https://localhost:7182/Chat/Index
 Here you have the chats with others.
+If you want to make sure that there is a direct connection between the users, you can duplicate the chatbox page and check in CONSOLE
+the sending + received messages.
 
 
 
