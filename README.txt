@@ -18,18 +18,21 @@ You can move to the SigUp Page by clicking the button in Login (click here to re
 and the url will be https://localhost:7182/Users/Signup
 It should looks like this:
 
+Screenshot for SignUp page: [![SignUp.jpg](https://i.postimg.cc/C1L9mwNV/SignUp.jpg)](https://postimg.cc/yJtfN4tf)
 
 After you signup with a new user it will be save at the db table Users) - again you may have to update the db to see it.
 
 ChatBox Page : https://localhost:7182/Chat/Index
 Here you have the chats with others.
+
+Screenshot for Chat page : [![Chat.jpg](https://i.postimg.cc/Pqd75d08/Chat.jpg)](https://postimg.cc/3kb1LQ8K)
+
 If you want to make sure that there is a direct connection between the users, you can duplicate the chatbox page and check in CONSOLE
 the sending + received messages.
 
+Screenshot for 
 
-
-
-
+SignalR example: [![service.jpg](https://i.postimg.cc/JnndjPrr/service.jpg)](https://postimg.cc/HJq2g08R)
 ___________________________________________________________________________________________________________________________
 REST API:
 
@@ -41,8 +44,4 @@ GET METHOD : https://localhost:7182/api/contacts/id
 For example try  https://localhost:7182/api/contacts/JimHal
 it should give you this JSON : {"id":"JimHal","name":"Jimothy","password":"12345","server":"localhost:7265","last":"video","lastDate":"17:28"}
 
-SignUp page: [![SignUp.jpg](https://i.postimg.cc/C1L9mwNV/SignUp.jpg)](https://postimg.cc/yJtfN4tf)
 
-Chat page : [![Chat.jpg](https://i.postimg.cc/Pqd75d08/Chat.jpg)](https://postimg.cc/3kb1LQ8K)
-
-SignalR example: [![service.jpg](https://i.postimg.cc/JnndjPrr/service.jpg)](https://postimg.cc/HJq2g08R)
