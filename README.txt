@@ -41,4 +41,8 @@ GET METHOD : https://localhost:7182/api/contacts/id
 For example try  https://localhost:7182/api/contacts/JimHal
 it should give you this JSON : {"id":"JimHal","name":"Jimothy","password":"12345","server":"localhost:7265","last":"video","lastDate":"17:28"}
 
+SignUp page: [![SignUp.jpg](https://i.postimg.cc/C1L9mwNV/SignUp.jpg)](https://postimg.cc/yJtfN4tf)
 
+Chat page : [![Chat.jpg](https://i.postimg.cc/Pqd75d08/Chat.jpg)](https://postimg.cc/3kb1LQ8K)
+
+SignalR example: [![service.jpg](https://i.postimg.cc/JnndjPrr/service.jpg)](https://postimg.cc/HJq2g08R)
