@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebServer.Data;
 
@@ -10,9 +11,10 @@ using WebServer.Data;
 namespace WebServer.Migrations
 {
     [DbContext(typeof(WebServerContext))]
-    partial class WebServerContextModelSnapshot : ModelSnapshot
+    [Migration("20220527205530_Contact")]
+    partial class Contact
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,6 +35,9 @@ namespace WebServer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NickName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
