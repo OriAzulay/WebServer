@@ -40,4 +40,3 @@ it should give you this JSON : {"id":"JimHal","name":"Jimothy","password":"12345
 
 [![Login.jpg](https://i.postimg.cc/mgjwVC6t/Login.jpg)](https://postimg.cc/18gw3nSQ)
 
-
