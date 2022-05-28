@@ -36,6 +36,21 @@ namespace WebServer.Controllers
 
             return Json(await q.ToListAsync());
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Details(string id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var c = await _context.Contacts.FirstOrDefaultAsync(m => m.Id == id);
+            if (c == null)
+            {
+                return NotFound();
+            }
+            return Json(c);
+
+        }   
 
 
     }

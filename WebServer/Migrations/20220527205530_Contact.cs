@@ -12,7 +12,7 @@ namespace WebServer.Migrations
                 name: "Contacts",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Server = table.Column<string>(type: "nvarchar(max)", nullable: true),
