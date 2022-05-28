@@ -1,4 +1,4 @@
-<h2>Web Chat Application - Server Side</h2>
+Web Chat Application - Server Side
 
 **Before Running :**
 To Make sure you have all set.
