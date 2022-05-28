@@ -16,3 +16,10 @@ async function post() {
     //const d = await r.json();
     console.log(r);
 }
+async function del() {
+    const r = await fetch('/api/contacts', {
+        method: 'Delete'
+    });
+    //const d = await r.json();
+    console.log(r);
+}

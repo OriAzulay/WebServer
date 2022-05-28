@@ -57,8 +57,6 @@ namespace WebServer.Controllers
             return Json(await q.ToListAsync());
         }*/
 
-
-
         // GET: Users/Login
         public IActionResult Login()
         {
@@ -89,6 +87,11 @@ namespace WebServer.Controllers
 
         // GET: Users/SignUp
         public IActionResult SignUp()
+        {
+            return View();
+        }
+
+        public IActionResult Ajax()
         {
             return View();
         }
