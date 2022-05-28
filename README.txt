@@ -7,6 +7,9 @@ Please run Update-Databest , and check both tables of Users + Contacts (these ar
 **Running Program:**
 Before starting to run the project on VSCode, make sure you are on WebServer run (not IIS EXPRESS).
 Once you start running you will see the main page in chrome which is Login Page that looks like this:
+
+[![Login.jpg](https://i.postimg.cc/mgjwVC6t/Login.jpg)](https://postimg.cc/18gw3nSQ)
+
 URL for Login could be : "https://localhost:7182" OR https://localhost:7182/Users/Login
 //extra : http://localhost:5182"
 
@@ -38,5 +41,4 @@ GET METHOD : https://localhost:7182/api/contacts/id
 For example try  https://localhost:7182/api/contacts/JimHal
 it should give you this JSON : {"id":"JimHal","name":"Jimothy","password":"12345","server":"localhost:7265","last":"video","lastDate":"17:28"}
 
-[![Login.jpg](https://i.postimg.cc/mgjwVC6t/Login.jpg)](https://postimg.cc/18gw3nSQ)
 
