@@ -366,7 +366,8 @@
         ]
 
         users.forEach(user => addRecipient(user));
-    </script>
+        let userList = localStorage.setItem('userList',users);
+        </script>
 </body>
 
 </html>

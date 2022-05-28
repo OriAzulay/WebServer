@@ -7,6 +7,15 @@ $(function () {
     connection = new signalR.HubConnectionBuilder().withUrl("/ChatHub").build();
     connection.start();
 });
+$(function() {
+    connection.on("ChangeReceived", function(value) {
+        console.log('received: ' + value);
+        var insertDiv = new DOMParser().parseFromString(value, "text/xml");
+        console.log(insertDiv.innerHTML);
+        document.getElementById('chatbox').appendChild(insertDiv.innerHTML);
+    });
+});
+
 const Userexists = function (user, users) {
     return users.some(u => u.name === user);
 }
@@ -156,13 +165,13 @@ const sendMessage = function (message, chatbox, bool = true, audio = null, btnFl
 
                 console.log('sending: ' + m.outerHTML);
                 connection.invoke("Changed", m.outerHTML);
-                
+                chatbox.appendChild(m);
 
-                connection.on("ChangeReceived", function (value) {
+                /*connection.on("ChangeReceived", function (value) {
                     console.log('received: ' + value);
                     var doc = new DOMParser().parseFromString(value, "text/xml");
                     chatbox.appendChild(m);
-                });
+                });*/
             });
 
 
@@ -171,7 +180,11 @@ const sendMessage = function (message, chatbox, bool = true, audio = null, btnFl
     }
 
     return 0;
-}
+    }
+
+    const msgCreate = function(m,chatbox) {
+        chatbox.appendChild(m);
+    }
 
 const sendNewMessage = function (user, message, chatbox) {
     let i = 0;
@@ -181,17 +194,13 @@ const sendNewMessage = function (user, message, chatbox) {
 
     let sent = sendMessage(message, chatbox, true, null, true);
     if (sent) {
-        $(function () {
-            connection.on("ChangeReceived", function (value) {
-                console.log('received2: ' + value);
                 user.newMessages['' + i] = message;
                 let lastMessage = document.getElementById("lastMessage" + user.name);
                 updateLastMessage(currentUser, lastMessage);
 
                 let cite = document.getElementById("cite" + currentUser.name);
                 updateLastMessageTime(currentUser, cite);
-            });
-        });
+       
         
     }
 }
