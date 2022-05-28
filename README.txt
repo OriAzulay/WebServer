@@ -40,6 +40,8 @@ As we learned about API controller, we can run it in this way https://localhost:
 contacts: is the name of our API controller.
 Once running the link it should gives you GetAll users method 
 
+[![Screenshot-API.png](https://i.postimg.cc/cCZ7xVsz/Screenshot-API.png)](https://postimg.cc/njR9TS9K)
+
 GET METHOD : https://localhost:7182/api/contacts/id 
 For example try  https://localhost:7182/api/contacts/JimHal
 it should give you this JSON : {"id":"JimHal","name":"Jimothy","password":"12345","server":"localhost:7265","last":"video","lastDate":"17:28"}
