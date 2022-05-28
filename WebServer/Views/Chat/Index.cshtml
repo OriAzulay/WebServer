@@ -318,6 +318,8 @@
         crossorigin="anonymous"></script>
 
     <script>
+        console.log(localStorage.getItem('userInput'));
+        document.getElementById('userName').innerHTML = localStorage.getItem('userInput');
         const messages = [
             { rec1: "The worst thing about prison was the Dementors.<br><span>12:18</span>",
             sent: "I understand nothing<br><span>14:00</span>",
@@ -369,8 +371,10 @@
 
 </html>
 @section Scripts {
+
     <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
     <script src="~/js/index.js"></script>
+
 }
 
 

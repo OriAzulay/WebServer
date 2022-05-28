@@ -39,16 +39,16 @@ body {
         padding: 0%;
     }
 
-        .container-fluid .right::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgb(250, 247, 251);
-            opacity: 0.06;
-        }
+    .container-fluid .right::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(250, 247, 251);
+        opacity: 0.06;
+    }
 
 .list-group li {
     width: 370px;

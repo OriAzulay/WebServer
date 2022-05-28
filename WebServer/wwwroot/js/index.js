@@ -1,9 +1,13 @@
-﻿//----
-var numberOfUsers = 5;
+﻿var numberOfUsers = 5;
 var newUsers = [];
 var currentUser;
 
-const exists = function (user, users) {
+var connection;
+$(function () {
+    connection = new signalR.HubConnectionBuilder().withUrl("/ChatHub").build();
+    connection.start();
+});
+const Userexists = function (user, users) {
     return users.some(u => u.name === user);
 }
 
@@ -20,7 +24,7 @@ const time = function () {
 }
 
 const checkRecipient = function (user, users) {
-    if (user && !exists(user, users)) {
+    if (user && !Userexists(user, users)) {
         addRecipient(user);
     }
     empty('floatingInputValue');
@@ -121,7 +125,7 @@ const buttons = function () {
 }
 
 // return 1 if the message is not empty
-const sendMessage = function (message, chatbox, bool = true, audio = null) {
+const sendMessage = function (message, chatbox, bool = true, audio = null, btnFlag = false) {
     if (message != "") {
         let m = document.createElement('div');
 
@@ -143,27 +147,26 @@ const sendMessage = function (message, chatbox, bool = true, audio = null) {
         } else {
             p.innerHTML = message;
         }
-        //inset the message to chatbox
         m.appendChild(p);
-        chatbox.appendChild(m);
-        $(function () {
+        if (!btnFlag) {
+            chatbox.appendChild(m);
+        } else { 
+            $(function () {
+               
 
-            var connection = new signalR.HubConnectionBuilder().withUrl("/ChatHub").build();
+                console.log('sending: ' + m.outerHTML);
+                connection.invoke("Changed", m.outerHTML);
+                
 
-            connection.start();
-
-            $('p').keyup(() => {
-                const v = $('p').innerHTML.val();
-                console.log('sending: ' + v);
-                connection.invoke("Changed", v);
+                connection.on("ChangeReceived", function (value) {
+                    console.log('received: ' + value);
+                    var doc = new DOMParser().parseFromString(value, "text/xml");
+                    chatbox.appendChild(m);
+                });
             });
 
-            connection.on("ChangeReceived", function (value) {
-                console.log('received: ' + value);
-                $('textarea').val(value);
-            });
 
-        });
+        }
         return 1;
     }
 
@@ -176,14 +179,20 @@ const sendNewMessage = function (user, message, chatbox) {
         i = Object.keys(user.newMessages).length;
     }
 
-    let sent = sendMessage(message, chatbox);
+    let sent = sendMessage(message, chatbox, true, null, true);
     if (sent) {
-        user.newMessages['' + i] = message;
-        let lastMessage = document.getElementById("lastMessage" + user.name);
-        updateLastMessage(currentUser, lastMessage);
+        $(function () {
+            connection.on("ChangeReceived", function (value) {
+                console.log('received2: ' + value);
+                user.newMessages['' + i] = message;
+                let lastMessage = document.getElementById("lastMessage" + user.name);
+                updateLastMessage(currentUser, lastMessage);
 
-        let cite = document.getElementById("cite" + currentUser.name);
-        updateLastMessageTime(currentUser, cite);
+                let cite = document.getElementById("cite" + currentUser.name);
+                updateLastMessageTime(currentUser, cite);
+            });
+        });
+        
     }
 }
 
@@ -257,13 +266,17 @@ const displayChat = function (user) {
 
     let send = document.createElement('button');
     send.className = "btn btn-outline-dark";
+    send.id = "sendBTN";
     send.type = "button";
     send.innerHTML = "Send";
     send.onclick = function () {
         if (input.value != "") {
+
+
             let chat = document.getElementById('chatbox');
             currentUser.lastMessage = "text";
             sendNewMessage(user, input.value + '<br><span>' + time() + '</span>', chat);
+
             input.value = '';
         }
     }
@@ -277,33 +290,32 @@ const displayChat = function (user) {
     div.appendChild(lt);
     inner.appendChild(db);
     /*$(function () {
-
+ 
         var connection = new signalR.HubConnectionBuilder().withUrl("/ChatHub").build();
-
+ 
         connection.start();
-
+ 
         $('textarea').keyup(() => {
             const v = $('textarea').val();
             console.log('sending: ' + v);
             connection.invoke("Changed", v);
         });
-
+ 
         connection.on("ChangeReceived", function (value) {
             console.log('received: ' + value);
             $('textarea').val(value);
         });
-
+ 
     });*/
 }
 
-//add messages
 const addRecipient = function (user) {
     if (!user) {
         return;
     }
 
     if (!(typeof user === 'object')) {
-        if (exists(user, newUsers)) {
+        if (Userexists(user, newUsers)) {
             return;
         }
         user = {
@@ -354,3 +366,5 @@ const addRecipient = function (user) {
     li.appendChild(cite);
     ul.appendChild(li);
 }
+
+
