@@ -20,7 +20,7 @@ It should looks like this:
 
 Screenshot for SignUp page: [![SignUp.jpg](https://i.postimg.cc/C1L9mwNV/SignUp.jpg)](https://postimg.cc/yJtfN4tf)
 
-After you signup with a new user it will be save at the db table Users) - again you may have to update the db to see it.
+After you signup with a new user it will be saved at the db table Users - again you may have to update the db to see it.
 
 ChatBox Page : https://localhost:7182/Chat/Index
 Here you have the chats with others.
