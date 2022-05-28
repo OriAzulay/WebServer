@@ -18,6 +18,11 @@ It should looks like this:
 
 After you signup with a new user it will be save at the db table Users) - again you may have to update the db to see it.
 
+ChatBox Page : https://localhost:7182/Chat/Index
+Here you have the chats with others.
+
+
+
 
 
 ___________________________________________________________________________________________________________________________
